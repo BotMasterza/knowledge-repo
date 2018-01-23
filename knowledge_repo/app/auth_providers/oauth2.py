@@ -115,10 +115,11 @@ class OAuth2Provider(KnowledgeAuthProvider):
             raise ValueError('You must configure a client id and client secret in order to use oauth')
         self.oauth_client = OAuth2Session(
             client_id=self.client_id,
-            scope=self.scopes,
-            redirect_uri='http://{}/auth/login/{}/authorize'.format(redirect_url, self.name),
-            auto_refresh_url=self.auto_refresh_url
+            scope=self.scopes
         )
+            #redirect_uri='http://{}/auth/login/{}/authorize'.format(redirect_url, self.name),
+            #auto_refresh_url=self.auto_refresh_url
+        #)
 
     def prompt(self):
         return redirect(self.oauth_client.authorization_url(self.authorization_url)[0])
