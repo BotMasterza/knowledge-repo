@@ -46,9 +46,8 @@ def site_map():
 
 
 @blueprint.route('/')
-@PageView.logged
 def render_index():
-    return redirect('/feed')
+    return "OK"
 
 
 @blueprint.route('/favorites')
