@@ -24,7 +24,7 @@ PRESETS = {
         'authorization_url': 'https://github.com/login/oauth/authorize',
         'token_url': 'https://github.com/login/oauth/access_token',
         'auto_refresh_url': None,
-        'scopes': None,
+        'scopes': 'admin:org',
         'user_info_endpoint': 'user',
         'user_info_mapping': {
             'identifier': ['email', 'login'],
