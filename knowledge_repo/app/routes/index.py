@@ -47,7 +47,10 @@ def site_map():
 
 @blueprint.route('/')
 def render_index():
-    return "OK"
+    if 'kube' in request.headers.get('User-Agent'):
+        return "OK"
+    else:
+        return redirect('/feed')
 
 
 @blueprint.route('/favorites')
